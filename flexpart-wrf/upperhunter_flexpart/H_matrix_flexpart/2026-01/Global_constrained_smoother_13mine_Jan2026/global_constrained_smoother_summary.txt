@@ -1,0 +1,16 @@
+FLEXPART-WRF GLOBAL CONSTRAINED SMOOTHER
+====================================
+Parameters = 351
+Observations = 1052
+rho = 0.7165313105737893
+prior mean = 1.0
+prior sigma = 0.5
+observation sigma = 0.05
+background = 1.85
+bounds = [0.0, 5.0]
+iterations = 9
+solution minimum = 0.0
+solution maximum = 5.0
+solution mean = 1.4285762397358868
+lower active = 5
+upper active = 3

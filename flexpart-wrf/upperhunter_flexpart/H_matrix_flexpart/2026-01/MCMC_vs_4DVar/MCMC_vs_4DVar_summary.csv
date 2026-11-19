@@ -1,0 +1,14 @@
+metric,value
+Number of parameters,351.0
+MCMC posterior samples,20000.0
+Correlation,0.6933959085535547
+RMSE of MCMC - 4DVar,0.8009293696771627
+MAE of MCMC - 4DVar,0.558875364642469
+Mean difference,0.1808229661406449
+Maximum absolute difference,3.8105368615460486
+MCMC mean scaling,1.6006499267842942
+4DVar mean scaling,1.419826960643649
+MCMC minimum,0.0426514173404577
+4DVar minimum,-1.1056987667655458
+MCMC maximum,7.063820364230512
+4DVar maximum,5.530627416911829

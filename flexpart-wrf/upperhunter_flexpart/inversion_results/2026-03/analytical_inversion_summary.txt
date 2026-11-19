@@ -1,0 +1,35 @@
+UPPER HUNTER CH4 ANALYTICAL BAYESIAN INVERSION
+================================================================================
+
+H dimensions: 1846 observations × 403 parameters
+Background: 1.850000 ppm
+Prior scaling: 1.000000
+Prior relative 1-sigma uncertainty: 0.500000
+Observation 1-sigma uncertainty: 0.050000 ppm
+
+H already contains prior OC mine emissions.
+Forward model:
+    y = b + Hs + epsilon
+
+Number of observations: 1846
+Number of parameters: 403
+
+Prior scaling mean: 1.00000000
+Posterior scaling mean: 1.20261059
+Posterior scaling minimum: -0.36685199
+Posterior scaling maximum: 6.11453727
+
+Posterior sigma minimum: 0.01366068
+Posterior sigma maximum: 0.50000000
+Posterior sigma mean: 0.44430995
+
+Prior RMSE: 0.22377723 ppm
+Posterior RMSE: 0.17353569 ppm
+
+Analytical/Kalman consistency:
+Maximum absolute difference: 1.59872116e-14
+RMS difference: 1.11203464e-15
+
+NOTE:
+Agriculture and power WRF-Chem contributions are not included in b in this version.
+Current background is the constant 1.85 ppm.

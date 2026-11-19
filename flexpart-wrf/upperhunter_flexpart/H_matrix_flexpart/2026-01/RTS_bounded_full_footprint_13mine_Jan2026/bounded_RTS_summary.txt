@@ -1,0 +1,25 @@
+FLEXPART-WRF Bayesian Constrained RTS Smoother
+Upper Hunter CH4
+
+Start date: 2026-01-05
+Number of days: 27
+Number of mines: 13
+Parameters: 351
+Prior mean: 1.0
+Prior sigma: 0.5
+Observation sigma: 0.05
+Background: 1.85
+rho: 0.7165313105737893
+Q daily: 0.121645720241852
+Bounds: [0.0, 5.0]
+
+Matched observations: 1052
+RTS minimum: 1.6457778635805702e-09
+RTS maximum: 5.0
+RTS mean: 1.4525498117094
+
+RTS vs bounded batch MAP
+Max abs difference: 1.7503288109526922
+RMSE: 0.2158904675753264
+MAE: 0.08696248752578348
+Correlation: 0.9732656368330074

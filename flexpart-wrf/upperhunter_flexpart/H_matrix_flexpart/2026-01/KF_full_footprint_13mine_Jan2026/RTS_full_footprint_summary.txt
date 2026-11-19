@@ -1,0 +1,31 @@
+AUGMENTED RTS SMOOTHER — FULL FLEXPART FOOTPRINT
+================================================================================
+
+Start date: 2026-01-05 00:00:00
+End date: 2026-01-31 00:00:00
+Number of mines: 13
+Number of days: 27
+Parameters: 351
+Prior mean: 1.0
+Prior sigma: 0.5
+Observation sigma: 0.05
+Correlation length: 3.0 days
+rho: 0.7165313105737893
+
+Matched observations: 1052
+
+AUGMENTED STATE DIMENSIONS
+Forward states: (27, 26)
+Forward covariances: (27, 26, 26)
+Smoothed states: (27, 26)
+Smoothed covariances: (27, 26, 26)
+
+BATCH MAP VALIDATION
+Batch MAP mean: 1.794063497111685
+MAP gradient L2: 1.302325066468516e+04
+MAP gradient max abs: 1.283720957640204e+04
+RTS vs MAP maximum absolute difference: 1.193967339962939e+00
+RTS vs MAP RMSE: 5.041650690141020e-01
+RTS vs MAP MAE: 3.744336356885244e-01
+RTS vs MAP correlation: 0.950647117738150
+Final-day maximum difference: 6.890806602436372e-01

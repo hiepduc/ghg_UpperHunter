@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>HVO Coal Mine.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>8000ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>8000ffff</color>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>HVO Coal Mine</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						150.9922250672801,-32.43148666956365,0 150.9836993540044,-32.42981242024064,0 150.9649014383897,-32.4422703116187,0 150.9612708748421,-32.45086429988649,0 150.9484377284317,-32.45785875263372,0 150.9429008373217,-32.45796157887172,0 150.9324110978721,-32.46502498503007,0 150.932310690528,-32.47073912653558,0 150.9358540890361,-32.47445282496359,0 150.9546523801329,-32.4661291858827,0 150.9716143616256,-32.46591590463991,0 150.9772429406113,-32.47417892846764,0 150.9748402096968,-32.48709500263944,0 150.9794586942912,-32.51614698598409,0 150.9794520236896,-32.51939530298198,0 150.9769383562106,-32.52394133135819,0 151.0095588107992,-32.53457096218822,0 151.022188379592,-32.53058905257733,0 151.0264346756581,-32.53215450121699,0 151.02963853826,-32.51985204708933,0 150.9961688995821,-32.51141581133996,0 150.9898590996518,-32.48896971903852,0 150.9845093517699,-32.4641663045073,0 150.9922250672801,-32.43148666956365,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.7.1155"></atom:link>
+	</Placemark>
+</Document>
+</kml>

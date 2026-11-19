@@ -1,0 +1,33 @@
+# Ignore NetCDF files
+*.nc
+*.nc4
+*.cdf
+/run/
+/WRFOUT/
+/uh3_apr/
+/uh3/
+/uh3_feb/
+/uh3_mar/
+/uh3_may/
+/uh3_jun/
+# FLEXPART Bayesian posterior samples
+*.npz
+
+# FLEXPART H matrices
+flexpart-wrf/upperhunter_flexpart/H_matrix_flexpart/**/H_flexpart_*.csv
+
+# FLEXPART run outputs
+flexpart-wrf/upperhunter_flexpart/run/
+flexpart-wrf/upperhunter_flexpart/WRFOUT/
+
+# FLEXPART test directories
+flexpart-wrf/uh3/
+flexpart-wrf/uh3_apr/
+flexpart-wrf/uh3_feb/
+flexpart-wrf/uh3_jun/
+flexpart-wrf/uh3_mar/
+flexpart-wrf/uh3_may/
+
+# STILT temporary outputs
+stilt/upperhunter/bayesian/**/nohup.out
+

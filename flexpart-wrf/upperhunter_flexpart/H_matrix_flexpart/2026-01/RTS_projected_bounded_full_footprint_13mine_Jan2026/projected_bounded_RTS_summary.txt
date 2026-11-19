@@ -1,0 +1,17 @@
+Projected constrained RTS summary
+Input: /home/duch/flexpart-wrf/upperhunter_flexpart/H_matrix_flexpart/KF_bounded_full_footprint_13mine_Jan2026/bounded_full_footprint_KF_daily_states.npz
+Output: /home/duch/flexpart-wrf/upperhunter_flexpart/H_matrix_flexpart/RTS_projected_bounded_full_footprint_13mine_Jan2026
+Dates: 2026-01-05 to 2026-01-31 (27 days)
+Mines: 13; augmented state dimension: 26
+Prior mean=1.0, sigma=0.5, correlation length=3.0
+rho=0.716531310573789; bounds=[0.0, 5.0]
+Scaling-factor min=1.62428480883e-11
+Scaling-factor max=5
+Scaling-factor mean=1.42864014909
+Daily parameters at lower bound=6
+Daily parameters at upper bound=3
+
+LIMITATION: This is a recursive projected/active-set RTS approximation.
+Hard bounds make the posterior non-Gaussian; this is not an exact
+truncated-Gaussian smoother. Validate against the global constrained
+batch MAP reference and report any remaining differences.

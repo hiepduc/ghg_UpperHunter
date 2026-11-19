@@ -1,0 +1,39 @@
+FULL-FLEXPART-FOOTPRINT AUGMENTED KALMAN FILTER
+================================================================================
+
+Start date: 2026-01-05
+End date: 2026-01-31
+Number of mines: 13
+Number of days: 27
+Number of parameters: 351
+Matched observations: 1052
+Prior mean: 1.0
+Prior sigma: 0.5
+Observation sigma: 0.05
+Correlation length: 3.0 days
+rho: 0.7165313105737893
+Maximum backward H lag: 1 days
+
+STATE STORAGE
+--------------------------------------------------------------------------------
+13-D daily states: (27, 13)
+13-D daily covariances: (27, 13, 13)
+26-D augmented states: (27, 26)
+26-D augmented covariances: (27, 26, 26)
+
+FORWARD KF VS BATCH MAP
+--------------------------------------------------------------------------------
+Maximum absolute difference: 2.540665483149966
+RMSE: 0.580243848063893
+MAE: 0.3287228702685304
+Correlation: 0.8331093582571573
+
+FINAL DAY
+--------------------------------------------------------------------------------
+Maximum final-day difference: 6.661338147750939e-15
+
+NIS
+--------------------------------------------------------------------------------
+Mean NIS: 9.169652455054855
+Median NIS: 0.5770987023081318
+Maximum NIS: 493.31075235999975

@@ -1,0 +1,32 @@
+Upper Hunter CH4 Bayesian daily inversion
+==========================================
+
+H matrix: /mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian/2026-02/H_matrix/STILT_H_matrix_mines_Feb2026.csv
+Observation file: /mnt/scratch_lustre/nzem_meim_scratch/data/piccaro_obs/Picarro_CH4_Upper_Hunter_Jan-July_2026.csv
+Output directory: /mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian/2026-02/Bayesian_daily_inversion_Feb2026
+
+Period: 2026-01-01 to 2026-01-31
+Sites: Singleton, Muswellbrook, Merriwa
+Number of mines: 13
+Number of days: 28
+Number of parameters: 364
+Number of matched observations: 1698
+
+Background CH4 [ppm]: 1.85
+Prior mean: 1.0
+Prior standard deviation: 0.5
+Temporal rho: 0.9
+Observation error [ppm]: 0.1
+Non-negative clipping: False
+
+Model:
+    y - background = H_daily s + epsilon
+
+Prior:
+    s ~ N(1, B)
+
+Posterior covariance:
+    C_post = (H^T R^-1 H + B^-1)^-1
+
+Posterior mean:
+    s_post = C_post [H^T R^-1(y-background) + B^-1 s_prior]

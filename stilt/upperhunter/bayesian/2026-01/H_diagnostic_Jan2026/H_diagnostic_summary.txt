@@ -1,0 +1,50 @@
+STILT H-MATRIX DIAGNOSTIC
+Upper Hunter CH4 - 13 mines
+====================================
+
+Observations: 1944
+Mine parameters: 13
+Numerical rank: 13
+Effective rank: 7.001432
+Condition number: 7.603654e+03
+Rank tolerance: 1.000000e-10
+
+Strong correlation threshold: |r| >= 0.90
+Number of strong pairs: 0
+
+Singular values:
+ 1 8.5202621753e-01
+ 2 4.7529447156e-01
+ 3 3.7086937116e-01
+ 4 3.0678926498e-01
+ 5 2.6838520729e-01
+ 6 1.6519784602e-01
+ 7 1.5932085874e-01
+ 8 9.6299662358e-02
+ 9 2.1522678073e-02
+10 8.8712844877e-03
+11 6.3116814473e-03
+12 4.5339847168e-03
+13 1.1205483422e-04
+
+Strongest correlation pairs:
+OC3   OC12  r=0.670350
+OC1   OC4   r=0.549861
+OC8   OC13  r=0.488816
+OC12  OC13  r=0.451013
+OC8   OC12  r=0.385195
+OC6   OC12  r=0.378762
+OC5   OC9   r=0.371980
+OC3   OC10  r=0.296765
+OC1   OC7   r=0.290143
+OC4   OC6   r=0.248774
+OC3   OC13  r=0.245969
+OC2   OC8   r=0.245108
+OC5   OC11  r=0.244194
+OC3   OC6   r=0.231070
+OC3   OC8   r=0.191767
+OC1   OC6   r=0.191149
+OC10  OC11  r=0.186667
+OC6   OC13  r=0.184416
+OC6   OC8   r=0.182213
+OC2   OC12  r=0.180118

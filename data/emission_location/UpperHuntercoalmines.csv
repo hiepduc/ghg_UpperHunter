@@ -1,0 +1,21 @@
+Facility_code_name,gCH4/s,polygon_area (m2),gCH4/m2/s,Legend,Region,Shapefile (yes/no),Notes
+UG1, 755.59 ,,,Coal Mine (UG),UH,Yes,"upcast vent shaft + flare stacks at -32.470830, 151.075089"
+UG2, 88.57 ,,,Coal Mine (UG),UH,Yes,"former upcast vent shaft at -32.188846, 150.852391"
+OC1, 553.08 ,2.65E+06,2.087E-04,Coal Mine,UH,Yes,
+OC2, 242.86 ,1.19E+07,2.038E-05,Coal Mine,UH,Yes,
+UG3, 79.56 ,,,Coal Mine (UG),UH,Yes,"upcast vent shaft at -32.188846, 150.852391"
+OC3, 342.53 ,2.70E+07,1.267E-05,Coal Mine,UH,Yes,
+OC4, 40.60 ,1.76E+07,2.313E-06,Coal Mine,UH,Yes,
+UG4, 170.58 ,,,Coal Mine (UG),UH,Yes,"upcast vent shaft at -32.453006, 151.103809"
+OC5, 0.01 ,2.26E+06,4.001E-09,Coal Mine,UH,Yes,
+OC6, 7.85 ,1.03E+07,7.638E-07,Coal Mine,UH,Yes,
+UG5, 8.37 ,,,Coal Mine (UG),UH,Yes,"upcast vent shaft at -32.410136, 150.864925; assumed location"
+OC7, 82.69 ,2.19E+06,3.784E-05,Coal Mine,UH,Yes,
+OC8, 5.95 ,2.44E+06,2.438E-06,Coal Mine,UH,Yes,
+OC9, 44.92 ,1.26E+07,3.555E-06,Coal Mine,UH,Yes,
+OC10, 101.93 ,4.38E+06,2.330E-05,Coal Mine,UH,Yes,
+UG6, 58.42 ,,,Coal Mine (UG),UH,Yes,"upcast VS#4 at -32.448179, 151.056359"
+OC11, 1.87 ,2.41E+06,7.749E-07,Coal Mine,UH,Yes,
+OC12, 331.49 ,7.10E+06,4.668E-05,Coal Mine,UH,Yes,
+UG7, 132.90 ,,,Coal Mine (UG),UH,Yes,"upcast vent shaft at -32.568455, 150.963478 for mining South Bates seams"
+OC13, 798.08 ,9.72E+06,8.207E-05,Coal Mine,UH,Yes,

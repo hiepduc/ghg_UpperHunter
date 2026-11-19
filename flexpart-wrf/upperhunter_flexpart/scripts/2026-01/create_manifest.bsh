@@ -1,0 +1,7 @@
+cd /mnt/scratch_lustre/nzem_meim_scratch/flexpart-wrf/upperhunter_flexpart
+
+find run/2026-01/hourly_obs/singleton \
+     run/2026-01/hourly_obs/muswellbrook \
+     run/2026-01/hourly_obs/merriwa \
+     -mindepth 1 -maxdepth 1 -type d \
+     | sort > run/2026-01/flexpart_month_manifest.txt

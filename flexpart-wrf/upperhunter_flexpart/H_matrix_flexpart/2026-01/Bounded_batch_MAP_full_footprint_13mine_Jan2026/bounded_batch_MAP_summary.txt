@@ -1,0 +1,40 @@
+UPPER HUNTER CH4 BOUNDED BATCH MAP
+===================================
+
+Start date: 2026-01-05
+End date: 2026-01-31
+Number of mines: 13
+Number of days: 27
+Number of parameters: 351
+
+Prior mean: 1.0
+Prior sigma: 0.5
+Observation sigma: 0.05
+Background ppm: 1.85
+Correlation length: 3.0 days
+rho: 0.7165313105737893
+
+Lower bound: 0.0
+Upper bound: 5.0
+
+Matched observations: 1052
+Whitened system: (1403, 351)
+
+Solver status: 1
+Solver success: True
+Solver message: The first-order optimality measure is less than `tol`.
+Iterations: 9
+Cost: 4845.06705010213
+Optimality: 5.2950270789717584e-12
+
+Minimum scaling factor: 1.1102230246251565e-16
+Maximum scaling factor: 5.0
+Mean scaling factor: 1.4285762397358872
+Lower-bound parameters: 5
+Upper-bound parameters: 3
+Free parameters: 343
+
+KKT gradient norm: 26.130679205072642
+Maximum free gradient: 1.0714207299145073e-12
+Maximum lower KKT violation: 0.0
+Maximum upper KKT violation: 0.0

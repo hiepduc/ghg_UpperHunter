@@ -1,0 +1,18 @@
+FLEXPART-WRF BAYESIAN BOUNDED RTS SMOOTHER
+====================================
+Prior mean      = 1.0
+Prior sigma     = 0.5
+Correlation     = 0.7165313105737893
+Q scalar        = 0.121645720241852
+Lower bound     = 0.0
+Upper bound     = 5.0
+Days            = 27
+Mines           = 13
+Forward KF NPZ  = /home/duch/flexpart-wrf/upperhunter_flexpart/H_matrix_flexpart/KF_bounded_full_footprint_13mine_Jan2026/bounded_full_footprint_KF_daily_states.npz
+
+RTS minimum = 2.77546046473e-10
+RTS maximum = 5
+RTS mean = 1.45249434443
+
+Active lower constraints = 1
+Active upper constraints = 1

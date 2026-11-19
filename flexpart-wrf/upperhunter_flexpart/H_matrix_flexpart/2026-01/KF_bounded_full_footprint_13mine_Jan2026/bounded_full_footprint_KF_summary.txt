@@ -1,0 +1,62 @@
+BOUNDED FULL-FLEXPART-FOOTPRINT AUGMENTED KALMAN FILTER
+================================================================================
+
+Start date: 2026-01-05
+End date: 2026-01-31
+Number of mines: 13
+Number of days: 27
+Number of parameters: 351
+Matched observations: 1052
+Prior mean: 1.0
+Prior sigma: 0.5
+Observation sigma: 0.05
+Correlation length: 3.0 days
+rho: 0.7165313105737893
+Lower emission-factor bound: 0.0
+Upper emission-factor bound: 5.0
+Maximum backward H lag: 1 days
+
+STATE STORAGE
+--------------------------------------------------------------------------------
+13-D daily states: (27, 13)
+13-D daily covariances: (27, 13, 13)
+26-D augmented states: (27, 26)
+26-D augmented covariances: (27, 26, 26)
+
+BOUNDS
+--------------------------------------------------------------------------------
+Minimum stored state: 0.0
+Maximum stored state: 5.0
+Lower bound: 0.0
+Upper bound: 5.0
+
+BOUNDS ACTIVITY
+--------------------------------------------------------------------------------
+Total observation updates: 1052
+Updates with active bounds: 10
+Percentage of updates bounded: 0.9505703422053232
+Lower-bound activations: 17
+Upper-bound activations: 1
+
+BOUNDED KF VS UNCONSTRAINED BATCH MAP
+--------------------------------------------------------------------------------
+Maximum absolute difference: 2.5420251731393164
+RMSE: 0.5884186729387623
+MAE: 0.33830061939835515
+Correlation: 0.830009190669474
+
+BOUNDED KF VS UNBOUNDED KF
+--------------------------------------------------------------------------------
+Maximum absolute difference: 0.6174481238540355
+RMSE: 0.07741134553212249
+MAE: 0.02219298929207074
+
+FINAL DAY
+--------------------------------------------------------------------------------
+Maximum final-day difference from unconstrained batch MAP: 0.03628956051364929
+
+NIS
+--------------------------------------------------------------------------------
+Mean NIS: 9.165606583202978
+Median NIS: 0.5784727631949534
+Maximum NIS: 493.31075235999975

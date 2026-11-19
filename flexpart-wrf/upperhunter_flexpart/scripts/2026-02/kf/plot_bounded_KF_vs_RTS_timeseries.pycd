@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+"""Plot hourly and daily bounded KF, projected RTS, and bounded batch MAP."""
+
+from pathlib import Path
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+
+# ------------------------------------------------------------
+# Paths
+# ------------------------------------------------------------
+BASE = (
+    Path.home()
+    / "flexpart-wrf/upperhunter_flexpart/H_matrix_flexpart"
+)
+
+KF_DIR = BASE / "KF_bounded_full_footprint_13mine_Jan2026"
+
+KF_DAILY_FILE = (
+    KF_DIR / "daily_bounded_full_footprint_KF_scaling_factors.csv"
+)
+KF_HOURLY_FILE = (
+    KF_DIR / "hourly_bounded_full_footprint_KF_results.csv"
+)
+RTS_FILE = (
+    BASE
+    / "RTS_projected_bounded_full_footprint_13mine_Jan2026"
+    / "daily_projected_bounded_RTS_scaling_factors.csv"
+)
+MAP_FILE = (
+    BASE
+    / "Global_constrained_smoother_13mine_Jan2026"
+    / "daily_global_constrained_smoother_scaling_factors.csv"
+)
+
+OUT_DIR = BASE / "RTS_projected_bounded_full_footprint_13mine_Jan2026"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+PNG_FILE = OUT_DIR / "bounded_hourly_KF_daily_KF_RTS_MAP_timeseries.png"
+PDF_FILE = OUT_DIR / "bounded_hourly_KF_daily_KF_RTS_MAP_timeseries.pdf"
+
+PRIOR = 1.0
+MIN_BOUND = 0.0
+MAX_BOUND = 5.0
+MINES = [f"OC{i}" for i in range(1, 14)]
+
+
+# ------------------------------------------------------------
+# Read daily scaling-factor CSVs
+# ------------------------------------------------------------
+def read_daily_file(filename, method):
+    df = pd.read_csv(filename)
+
+    if "date" not in df.columns:
+        raise ValueError(
+            f"No 'date' column in {filename}. "
+            f"Columns: {df.columns.tolist()}"
+        )
+
+    df["date"] = pd.to_datetime(df["date"])
+
+    missing = [m for m in MINES if m not in df.columns]
+    if missing:
+        raise ValueError(
+            f"{filename} is missing mine columns: {missing}. "
+            f"Available columns: {df.columns.tolist()}"
+        )
+
+    df = df[["date"] + MINES].copy()
+    return df.rename(
+        columns={m: f"{m}_{method}" for m in MINES}
+    )
+
+
+kf_daily = read_daily_file(KF_DAILY_FILE, "KF")
+rts_daily = read_daily_file(RTS_FILE, "RTS")
+map_daily = read_daily_file(MAP_FILE, "MAP")
+
+daily = (
+    kf_daily
+    .merge(rts_daily, on="date", how="inner")
+    .merge(map_daily, on="date", how="inner")
+    .sort_values("date")
+)
+
+
+# ------------------------------------------------------------
+# Read hourly bounded KF results
+# ------------------------------------------------------------
+hourly = pd.read_csv(KF_HOURLY_FILE)
+hourly["time_aest"] = pd.to_datetime(hourly["time_aest"])
+
+# The augmented KF state contains previous-day and current-day states.
+# Plot current_OCi, which is the current state after each update.
+hourly_cols = [f"current_{m}" for m in MINES]
+missing = [c for c in hourly_cols if c not in hourly.columns]
+
+if missing:
+    raise ValueError(
+        f"Missing hourly state columns: {missing}"
+    )
+
+# Each observation update may be associated with a receptor.
+# There can be multiple rows at the same timestamp. Keep the last
+# update at each timestamp so the plot shows the latest state
+# after all observations available at that time have been processed.
+hourly = (
+    hourly.sort_values("time_aest")
+    .drop_duplicates(subset="time_aest", keep="last")
+)
+
+print(f"Daily dates: {len(daily)}")
+print(f"Hourly state timestamps: {len(hourly)}")
+print(
+    f"Hourly time range: {hourly['time_aest'].min()} "
+    f"to {hourly['time_aest'].max()}"
+)
+
+
+# ------------------------------------------------------------
+# Plot
+# ------------------------------------------------------------
+fig, axes = plt.subplots(
+    4, 4,
+    figsize=(20, 15),
+    sharex=True,
+    sharey=True,
+)
+axes = axes.flatten()
+
+for i, mine in enumerate(MINES):
+    ax = axes[i]
+
+    # Hourly bounded KF: thin line, plotted first to keep it in the background.
+    ax.plot(
+        hourly["time_aest"],
+        hourly[f"current_{mine}"],
+        color="tab:purple",
+        linewidth=0.8,
+        alpha=0.55,
+        label="Hourly bounded KF",
+        zorder=1,
+    )
+
+    # Daily bounded KF
+    ax.plot(
+        daily["date"],
+        daily[f"{mine}_KF"],
+        color="tab:blue",
+        linewidth=1.6,
+        marker="o",
+        markersize=2.5,
+        label="Daily bounded KF",
+        zorder=3,
+    )
+
+    # Projected bounded RTS
+    ax.plot(
+        daily["date"],
+        daily[f"{mine}_RTS"],
+        color="tab:orange",
+        linewidth=1.7,
+        linestyle="--",
+        marker="s",
+        markersize=2.5,
+        label="Projected bounded RTS",
+        zorder=4,
+    )
+
+    # Global constrained batch MAP
+    ax.plot(
+        daily["date"],
+        daily[f"{mine}_MAP"],
+        color="tab:green",
+        linewidth=1.7,
+        linestyle="-.",
+        marker="^",
+        markersize=2.5,
+        label="Bounded batch MAP",
+        zorder=5,
+    )
+
+    # Prior scaling factor
+    ax.axhline(
+        PRIOR,
+        color="black",
+        linestyle=":",
+        linewidth=1.5,
+        label="Prior = 1.0",
+        zorder=2,
+    )
+
+    ax.set_title(mine)
+    ax.set_ylim(MIN_BOUND - 0.1, MAX_BOUND + 0.1)
+    ax.grid(True, alpha=0.25)
+
+    ax.xaxis.set_major_locator(mdates.DayLocator(interval=5))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%d Jan"))
+
+    if i % 4 == 0:
+        ax.set_ylabel("Scaling factor")
+
+    if i // 4 == 3:
+        ax.set_xlabel("Date (AEST)")
+
+# Remove unused panels.
+for j in range(len(MINES), len(axes)):
+    fig.delaxes(axes[j])
+
+# Shared legend
+handles, labels = axes[0].get_legend_handles_labels()
+fig.legend(
+    handles,
+    labels,
+    loc="upper center",
+    ncol=5,
+    frameon=False,
+    bbox_to_anchor=(0.5, 0.965),
+)
+
+fig.suptitle(
+    "Upper Hunter mine scaling factors — January 2026",
+    fontsize=16,
+    y=0.995,
+)
+
+fig.tight_layout(rect=[0, 0, 1, 0.925])
+
+fig.savefig(PNG_FILE, dpi=300, bbox_inches="tight")
+fig.savefig(PDF_FILE, bbox_inches="tight")
+plt.close(fig)
+
+print(f"Saved PNG: {PNG_FILE}")
+print(f"Saved PDF: {PDF_FILE}")
+

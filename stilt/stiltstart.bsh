@@ -1,0 +1,53 @@
+#!/bin/bash
+source /mnt/scratch_lustre/ar_biogen_scratch/stack/aqf-med-s15/spack/share/spack/setup-env.sh
+
+spack load netcdf-c
+spack load netcdf-fortran
+
+spack load intel-oneapi-compilers/phxvcdf
+spack load intel-oneapi-compilers-classic
+spack load cmake bison flex curl
+spack load hdf5
+spack load openmpi
+
+# Enter the conda stilt_env2 envrionemnt
+
+source /home/duch/.bashrc.conda
+conda activate stilt_env2
+
+export R_LIBS_USER=$HOME/R/x86_64-pc-linux-gnu-library/4.2
+
+NCF="/mnt/scratch_lustre/ar_biogen_scratch/stack/aqf-med-s15/spack/opt/spack/linux-x86_64_v3/netcdf-fortran-4.6.2-6xxxvdhat3tdlcydf56dey23pmxod4sx"
+NCC="/mnt/scratch_lustre/ar_biogen_scratch/stack/aqf-med-s15/spack/opt/spack/linux-x86_64_v3/netcdf-c-4.9.3-o3xhoky7mwcvtan6cswmuxlhafuz7ial"
+
+export LD_LIBRARY_PATH="$NCF/lib:$NCC/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+# Check that netcdf4 is installed
+
+Rscript -e '
+cat("R.home =", R.home(), "\n")
+cat("R.version =", R.version.string, "\n")
+cat("R_LIBS_USER =", Sys.getenv("R_LIBS_USER"), "\n")
+cat("Libraries:\n")
+print(.libPaths())
+cat("ncdf4:\n")
+print(find.package("ncdf4", quiet=TRUE))
+'
+# Check all other packages installed and available
+
+Rscript -e '
+.libPaths(c("/home/duch/miniconda3/envs/stilt_env2/lib/R/library", .libPaths()))
+
+pkgs <- c("ncdf4","dplyr","raster","terra","sp","lubridate","rslurm")
+
+for (p in pkgs) {
+    cat("\n---", p, "---\n")
+    ok <- requireNamespace(p, quietly=TRUE)
+    cat("available:", ok, "\n")
+    if (ok)
+        cat("version:", as.character(packageVersion(p)), "\n")
+}
+
+cat("\nDONE\n")
+'
+

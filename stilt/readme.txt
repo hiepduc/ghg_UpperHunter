@@ -85,10 +85,10 @@ For Janaruary 2026 wrf to arl
 
 It contains the key components we need to inspect:
 - arl/ — converted ARL meteorological files.
-- arljanuary2026.bsh — your January conversion script.
+- arljanuary2026.bsh — the January conversion script.
 - config/ and scripts/ — configuration and supporting scripts.
 - footprints/ — footprint output.
-- ARLDATA.CFG, WRFRAIN.BIN and hybrid_wrfvcoords.txt — supporting files for your setup.
+- ARLDATA.CFG, WRFRAIN.BIN and hybrid_wrfvcoords.txt — supporting files for our setup.
 
 Run the script arljanuary2026.bsh (arlfebruary2026.bsh ....)
 
@@ -98,14 +98,14 @@ convert_wrf_uh_to_arl.sh
 
 (b) Then  Run STILT / HYSPLIT
 
-Generate backward footprints for each receptor and release time, retaining your existing 5 m receptor height and 24-hour backward duration if those remain your intended settings.
+Generate backward footprints for each receptor and release time, retaining our existing 5 m receptor height and 24-hour backward duration if those remain our intended settings.
 
 run the script run_stilt_feb2026.sh 
 (in /mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian)
 
 (c) Process footprints
 
-Extract footprints and combine them with your 13 Upper Hunter coal-mine emissions to construct the observation sensitivity matrix for the inversion.
+Extract footprints and combine them with our 13 Upper Hunter coal-mine emissions to construct the observation sensitivity matrix for the inversion.
 
 (6) The work flow
 

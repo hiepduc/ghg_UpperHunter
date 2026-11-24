@@ -32,3 +32,7 @@ plot_posterior_daily_scaling_factors_Jan2026.py
 plot_prior_posterior_receptor_comparison_Jan2026_new.py
 plot_prior_posterior_receptor_comparison_Jan2026.py
 
+To run/plot R script use
+
+R_LIBS_USER="$CONDA_PREFIX/lib/R/library" $CONDA_PREFIX/bin/Rscript --vanilla plot_stilt_particles.R
+

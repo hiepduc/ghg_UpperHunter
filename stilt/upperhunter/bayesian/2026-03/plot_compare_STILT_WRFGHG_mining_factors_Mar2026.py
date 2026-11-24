@@ -2,7 +2,7 @@
 """
 ===============================================================================
 Compare STILT combined mining scaling factor with WRF-GHG Mining factor
-Upper Hunter - February 2026
+Upper Hunter - March 2026
 
 STILT:
     13 individual open-cut mine posterior daily scaling factors
@@ -30,7 +30,7 @@ The script also calculates:
     - PNG and PDF plots
 
 Period:
-    1 February 2026 - 31 February 2026
+    1 March 2026 - 31 March 2026
 ===============================================================================
 """
 
@@ -49,7 +49,7 @@ import matplotlib.pyplot as plt
 # ---------------------------------------------------------------------------
 STILT_FILE = (
     "/mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian/2026-02/"
-    "Bayesian_daily_inversion_Feb2026/daily_scaling_factors_Feb2026.csv"
+    "Bayesian_daily_inversion_Mar2026/daily_scaling_factors_Mar2026.csv"
 )
 
 # ---------------------------------------------------------------------------
@@ -73,15 +73,15 @@ PRIOR_FILE = (
 # ---------------------------------------------------------------------------
 OUTDIR = (
     "/mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian/2026-02/"
-    "Bayesian_daily_inversion_Feb2026/"
+    "Bayesian_daily_inversion_Mar2026/"
     "STILT_vs_WRFGHG_combined_mining"
 )
 
 # ---------------------------------------------------------------------------
 # Date range for comparison
 # ---------------------------------------------------------------------------
-START_DATE = "2026-02-01"
-END_DATE   = "2026-02-28"
+START_DATE = "2026-03-01"
+END_DATE   = "2026-03-31"
 
 # ---------------------------------------------------------------------------
 # Number of mines
@@ -96,7 +96,7 @@ os.makedirs(OUTDIR, exist_ok=True)
 
 print("=" * 90)
 print("STILT vs WRF-GHG COMBINED MINING SCALING FACTOR")
-print("Upper Hunter - February 2026")
+print("Upper Hunter - March 2026")
 print("=" * 90)
 
 
@@ -694,7 +694,7 @@ ax.set_ylabel(
 
 ax.set_title(
     "Upper Hunter CH₄ Mining Scaling Factors\n"
-    "STILT vs WRF-GHG — 1-28 February 2026"
+    "STILT vs WRF-GHG — 1-31 March 2026"
 )
 
 ax.grid(
@@ -842,7 +842,7 @@ ax.set_ylabel(
 
 ax.set_title(
     "Upper Hunter Total Open-Cut Mine Emissions\n"
-    "STILT vs WRF-GHG — 1-28 February 2026"
+    "STILT vs WRF-GHG — 1-31 March 2026"
 )
 
 ax.grid(
@@ -948,7 +948,7 @@ ax.set_ylabel(
 
 ax.set_title(
     "STILT vs WRF-GHG Daily Mining Factors\n"
-    "1–28 February 2026"
+    "1–31 March 2026"
 )
 
 ax.text(

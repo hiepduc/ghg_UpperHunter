@@ -2,10 +2,10 @@
 
 """
 Plot posterior daily emission scaling factors for the 13 Upper Hunter
-open-cut mines for February 2026.
+open-cut mines for March 2026.
 
 Input:
-    Bayesian_daily_inversion_feb2026/daily_scaling_factors_Feb2026.csv
+    Bayesian_daily_inversion_mar2026/daily_scaling_factors_Mar2026.csv
 
 For each mine:
     - posterior mean scaling factor
@@ -13,8 +13,8 @@ For each mine:
     - prior/current inventory = 1.0
 
 Output:
-    posterior_daily_scaling_factors_Feb2026.png
-    posterior_daily_scaling_factors_Feb2026.pdf
+    posterior_daily_scaling_factors_Mar2026.png
+    posterior_daily_scaling_factors_Mar2026.pdf
 """
 
 import os
@@ -28,27 +28,27 @@ import matplotlib.dates as mdates
 # PATHS
 # ============================================================
 
-BASE_DIR = "/mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian/2026-02"
+BASE_DIR = "/mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/bayesian/2026-03"
 
 INPUT_FILE = os.path.join(
     BASE_DIR,
-    "Bayesian_daily_inversion_Feb2026",
-    "daily_scaling_factors_Feb2026.csv"
+    "Bayesian_daily_inversion_Mar2026",
+    "daily_scaling_factors_Mar2026.csv"
 )
 
 OUTPUT_DIR = os.path.join(
     BASE_DIR,
-    "Bayesian_daily_inversion_Feb2026"
+    "Bayesian_daily_inversion_Mar2026"
 )
 
 PNG_FILE = os.path.join(
     OUTPUT_DIR,
-    "posterior_daily_scaling_factors_Feb2026.png"
+    "posterior_daily_scaling_factors_Mar2026.png"
 )
 
 PDF_FILE = os.path.join(
     OUTPUT_DIR,
-    "posterior_daily_scaling_factors_Feb2026.pdf"
+    "posterior_daily_scaling_factors_Mar2026.pdf"
 )
 
 
@@ -227,9 +227,9 @@ for i in range(13, 16):
 # X AXIS
 # ============================================================
 
-# February 2026: show every 5 days
+# March 2026: show every 5 days
 locator = mdates.DayLocator(interval=5)
-formatter = mdates.DateFormatter("%d Feb")
+formatter = mdates.DateFormatter("%d Mar")
 
 for ax in axes[:13]:
     ax.xaxis.set_major_locator(locator)
@@ -249,7 +249,7 @@ for ax in axes[8:13]:
 
 fig.suptitle(
     "Upper Hunter CH$_4$ Inverse Modelling\n"
-    "Posterior Daily Emission Scaling Factors — February 2026",
+    "Posterior Daily Emission Scaling Factors — March 2026",
     fontsize=17,
     fontweight="bold",
     y=0.985
@@ -261,7 +261,7 @@ fig.suptitle(
 # ============================================================
 
 fig.supxlabel(
-    "Date (February 2026)",
+    "Date (March 2026)",
     fontsize=12
 )
 

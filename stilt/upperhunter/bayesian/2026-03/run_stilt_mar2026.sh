@@ -4,7 +4,7 @@ set -u
 
 STILT_WD="/home/duch/software/stilt"
 
-PROJECT="/mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/arl_mine_2026/2026-02"
+PROJECT="/mnt/scratch_lustre/nzem_meim_scratch/stilt/upperhunter/arl_mine_2026/2026-03"
 
 MET_PATH="${PROJECT}/arl"
 OUTPUT_BASE="${PROJECT}/footprints"
@@ -77,15 +77,15 @@ run_stilt()
 
 
 # ============================================================
-# February 1 through February 28, 2026
+# March 1 through March 31, 2026
 # Every hour, every receptor
 # ============================================================
 
-for DAY in $(seq -w 27 28); do
+for DAY in $(seq -w 31 31); do
 
     for HOUR in $(seq -w 00 23); do
 
-        TIME="2026-02-${DAY}T${HOUR}:00:00Z"
+        TIME="2026-03-${DAY}T${HOUR}:00:00Z"
 
         run_stilt \
             "Singleton" \

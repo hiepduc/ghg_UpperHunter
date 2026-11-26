@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=UH_FLEXPART3
 #SBATCH --partition=general
-#SBATCH --array=1-739%48
+#SBATCH --array=1-798%48
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --time=02:00:00
-#SBATCH --output=/mnt/scratch_lustre/nzem_meim_scratch/flexpart-wrf/upperhunter_flexpart/run/2026-06/slurm_logs/flexpart3_%A_%a.out
-#SBATCH --error=/mnt/scratch_lustre/nzem_meim_scratch/flexpart-wrf/upperhunter_flexpart/run/2026-06/slurm_logs/flexpart3_%A_%a.err
+#SBATCH --output=/mnt/scratch_lustre/nzem_meim_scratch/flexpart-wrf/upperhunter_flexpart/run/2026-07/slurm_logs/flexpart3_%A_%a.out
+#SBATCH --error=/mnt/scratch_lustre/nzem_meim_scratch/flexpart-wrf/upperhunter_flexpart/run/2026-07/slurm_logs/flexpart3_%A_%a.err
 
 set -u
 
@@ -19,8 +19,8 @@ set -u
 BASE="/mnt/scratch_lustre/nzem_meim_scratch/flexpart-wrf/upperhunter_flexpart"
 EXE="/home/duch/flexpart-wrf/flexpart-wrf/flexwrf33_omp"
 
-MANIFEST="${BASE}/run/2026-06/hourly_obs_3layer/production_manifest.txt"
-LOGDIR="${BASE}/run/2026-06/slurm_logs"
+MANIFEST="${BASE}/run/2026-07/hourly_obs_3layer/production_manifest.txt"
+LOGDIR="${BASE}/run/2026-07/slurm_logs"
 
 mkdir -p "${LOGDIR}"
 

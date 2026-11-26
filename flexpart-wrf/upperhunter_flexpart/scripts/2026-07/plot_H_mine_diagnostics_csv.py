@@ -10,7 +10,7 @@ Input:
     H_flexpart_metadata_Jul2026.csv
 
 Expected H matrix:
-    1827 observations x 403 mine-day sensitivity columns
+    1798 observations x 403 mine-day sensitivity columns
 
 Diagnostics:
     1. Mine-to-mine correlation heatmap using aggregated daily H
@@ -74,7 +74,7 @@ OUTDIR.mkdir(parents=True, exist_ok=True)
 
 N_MINE = 13
 N_DAY = 31
-N_OBS_EXPECTED = 1827
+N_OBS_EXPECTED = 1798
 N_H_EXPECTED = N_MINE * N_DAY
 
 MINES = [f"OC{i}" for i in range(1, N_MINE + 1)]
@@ -175,7 +175,7 @@ print("\nAll mines have the expected number of daily columns.")
 # H_mine[:, m] = sum of the 28 daily H sensitivities for mine m.
 #
 # Shape:
-#     1827 observations x 13 mines
+#     1798 observations x 13 mines
 #
 # This is useful for examining whether the mines have similar
 # overall sensitivity patterns across the observations.
@@ -284,8 +284,8 @@ plt.close(fig)
 # ================================================================
 #
 # Each mine has:
-#     1827 observations x 31 daily sensitivity columns
-#     = 56,637 values
+#     1798 observations x 31 daily sensitivity columns
+#     = 55,738 values
 #
 # Zeros are retained in the linear-scale boxplot.
 # ================================================================
@@ -354,7 +354,7 @@ ax.set_xlabel("Mine")
 ax.set_ylabel("H (ppmv per unit daily scaling factor)")
 ax.set_title(
     "Distribution of H by mine\n"
-    "31 source-days × 1827 observations; zeros retained"
+    "31 source-days × 1798 observations; zeros retained"
 )
 
 ax.grid(axis="y", alpha=0.25)

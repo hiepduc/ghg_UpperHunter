@@ -288,7 +288,7 @@ DATES = pd.date_range(
 
 N_DAYS = len(DATES)
 
-assert N_DAYS == 30
+assert N_DAYS == 31
 
 
 # =============================================================================
@@ -305,7 +305,7 @@ H_COLUMNS = [
 
 ]
 
-assert len(H_COLUMNS) == 390
+assert len(H_COLUMNS) == 403
 
 
 # =============================================================================
@@ -1933,7 +1933,7 @@ print(
 
 
 print(
-    "Expected: 1739 x 390"
+    "Expected: 1798 x 403"
 )
 
 

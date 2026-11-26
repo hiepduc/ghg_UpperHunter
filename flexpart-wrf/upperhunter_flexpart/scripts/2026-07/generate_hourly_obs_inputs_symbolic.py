@@ -3,7 +3,7 @@
 
 """
 Generate FLEXPART-WRF backward runs for every VALID hourly Picarro
-observation from 1-30 July 2026 AEST.
+observation from 1-31 July 2026 AEST.
 
 Picarro timestamps:
     AEST = UTC + 10 hours
@@ -22,11 +22,11 @@ The original FLEXPART settings and AVAILABLE generation logic
 are retained.
 
 Current data:
-    Singleton       568
-    Muswellbrook    598
-    Merriwa         573
+    Singleton       597
+    Muswellbrook    614
+    Merriwa         587
     -------------------
-    Total          1739
+    Total          1798
 """
 
 from pathlib import Path
@@ -481,17 +481,17 @@ print(
 
 print()
 
-if total == 1739:
+if total == 1798:
 
     print(
-        "SUCCESS: generated all 1739 valid "
+        "SUCCESS: generated all 1798 valid "
         "observation-receptor cases."
     )
 
 else:
 
     print(
-        f"WARNING: expected 1739 cases, "
+        f"WARNING: expected 1798 cases, "
         f"but generated {total}."
     )
 

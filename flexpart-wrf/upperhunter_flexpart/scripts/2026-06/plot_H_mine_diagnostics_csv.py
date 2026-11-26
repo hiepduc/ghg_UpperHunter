@@ -73,7 +73,7 @@ OUTDIR.mkdir(parents=True, exist_ok=True)
 # ================================================================
 
 N_MINE = 13
-N_DAY = 31
+N_DAY = 30
 N_OBS_EXPECTED = 1827
 N_H_EXPECTED = N_MINE * N_DAY
 
